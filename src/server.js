@@ -1,0 +1,15 @@
+const express = require("express")
+const app = express()
+const cors = require("cors")
+const bodyParser = require('body-parser')
+const { PORT } = require("./config")
+const router = require('./modules')
+const path = require('path')
+
+// app.use(cors())
+app.use(express.json())
+app.use(bodyParser.urlencoded({ extended: true }))
+app.use('/public', express.static(path.resolve(__dirname, './public')))
+app.use(router)
+
+app.listen(PORT,console.log(`http://localhost:${PORT}`))
