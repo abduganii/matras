@@ -71,3 +71,21 @@ Values
         'Penatibus viverra gravida rhoncus in. At turpis morbi ante tortor a est. Habitant adipiscing ut sed pulvinar tellus, ut urna, fermentum. Porttitor senectus lorem rhoncus facilisi ac dictum varius egestas.',
         1
     );
+
+select
+    *
+from
+    products
+where
+    is_deleted = false
+    and cotegory_id = 2;
+
+insert into
+    orders(
+        order_name,
+        order_phoneNumb,
+        order_quantity,
+        product_id
+    )
+Values
+    ('Jenny Wilson', '+998 90 123 45 67', 4, 1);

@@ -9,6 +9,7 @@ const Technologies = require('./technologies')
 const Customer = require('./Сustomers')
 const Address = require('./address')
 const product = require('./Products')
+const order = require('./order')
 
 const auth = require('../meddlewares/auth')
 const uploadImg = require('../meddlewares/multer')
@@ -38,5 +39,8 @@ router
     //product
     .get('/product', product.Get)
     .post('/newProduct', auth, uploadImg.array("images"), product.Post)
+    //order 
+    .get('/order',order.Get)
+    .post('/newOrder',order.Post)
     
 module.exports =router

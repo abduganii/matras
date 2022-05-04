@@ -58,3 +58,13 @@ CREATE TABLE products(
     product_create_at timestamptz DEFAULT CURRENT_TIMESTAMP,
     cotegory_id int REFERENCES cotegory(cotegory_id) not null
 );
+
+CREATE TABLE orders(
+    order_id serial Primary key not null,
+    order_name varchar(213) not null,
+    order_phoneNumb varchar(92) not null,
+    order_quantity int not null,
+    is_call boolean DEFAULT false,
+    is_deleted boolean DEFAULT false,
+    product_id int REFERENCES products(product_id) null null
+);
