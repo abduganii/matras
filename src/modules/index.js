@@ -10,6 +10,7 @@ const Customer = require('./Сustomers')
 const Address = require('./address')
 const product = require('./Products')
 const order = require('./order')
+const carusel = require('./calusel')
 
 const auth = require('../meddlewares/auth')
 const uploadImg = require('../meddlewares/multer')
@@ -51,6 +52,9 @@ router
     //order 
     .get('/order',order.Get)
     .post('/newOrder',auth,order.Post)
-    .put('/updateOrder',auth,order.Put)
+    .put('/updateOrder', auth, order.Put)
+    
+    //carusel
+    .get('/carusel',carusel.Get)
     
 module.exports =router

@@ -4,10 +4,10 @@ class carusels extends PG {
     carusel() {
         return this.fetchAll(
             `
-                select * from carusels where is_deleted = false
+                select * from carusels
             `
         )
     }
 }
 
-module.exports = new carusels
+module.exports = new carusels()
