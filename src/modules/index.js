@@ -46,6 +46,7 @@ router
 
     //order 
     .get('/order',order.Get)
-    .post('/newOrder',order.Post)
+    .post('/newOrder',auth,order.Post)
+    .put('/updateOrder',auth,order.Put)
     
 module.exports =router

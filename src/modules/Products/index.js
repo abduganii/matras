@@ -3,8 +3,18 @@ const model = require('./model')
 module.exports = {
     Get: async (req, res) => {
         try {
-            const {cotegoryid} = req.headers
-            res.send(await model.product(cotegoryid))
+            res.send(await model.product())
+        } catch (error) {
+            res.status(400).send({
+                status: 400,
+                error:"Bad request"
+            })
+        }
+    },
+    GetByCotegory: async (req, res) => {
+        try {
+            const {cotegoryId} =req.headers
+            res.send(await model.productbycotygory(cotegoryId))
         } catch (error) {
             res.status(400).send({
                 status: 400,

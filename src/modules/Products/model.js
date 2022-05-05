@@ -1,13 +1,20 @@
 const PG = require('../../lib/postgres')
 
 class products extends PG{
-    product(cotegoryId) {
+    product() {
+        return this.fetchAll(
+            `
+            select * from products where is_deleted = false 
+            `
+        )
+    }   
+    productbycotygory(cotegoryId) {
         return this.fetchAll(
             `
             select * from products where is_deleted = false and cotegory_id= $1
             `,[cotegoryId]
         )
-    }   
+    }  
     newProduct(productName,productImg,productPrice,productWight,productSize,productWarranty,productSuitable,productPriceAksiya,productText,cotegoryId) {
         return this.fetchAll(
             `

@@ -4,7 +4,12 @@ class orders extends PG{
     order() {
         return this.fetchAll(
             `
-            select * from orders where is_deleted = false
+            select
+            *
+            from
+            orders o
+            INNER join products p 
+            ON o.product_id = p.product_id
             `
         )
     }   
@@ -23,6 +28,18 @@ class orders extends PG{
                 returning *
         `, [name,phoneNumber,quantity,productCategory]
         )
+    }
+    changeIscal(tryfalse,id) {
+        return this.fetch(
+            `
+            UPDATE 
+                orders 
+            SET 
+                is_call = $1 
+            WHERE 
+                order_id = $2
+            returning *
+        `,[tryfalse,id]) 
     }
 }
 

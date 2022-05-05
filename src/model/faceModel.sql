@@ -60,16 +60,16 @@ insert into
     )
 Values
     (
-        'Lux Soft Memory',
-        ARRAY ['C:\\Users\\NITRO V\\Desktop\\matras-main\\src\\public\\image 20.png','C:\\Users\\NITRO V\\Desktop\\matras-main\\src\\public\\image 20.png'],
-        '1 600 000',
-        '150 kg',
-        '200 x 134 x 40',
-        '5 yil',
+        'Ortopedik Eko matras',
+        ARRAY ['C:\\Users\\NITRO V\\Desktop\\matras-main\\src\\public\\image 21.png','C:\\Users\\NITRO V\\Desktop\\matras-main\\src\\public\\image 21.png'],
+        '1 800 000',
+        '130 kg',
+        '220 x 114 x 50',
+        '6 yil',
         3,
         '0',
         'Penatibus viverra gravida rhoncus in. At turpis morbi ante tortor a est. Habitant adipiscing ut sed pulvinar tellus, ut urna, fermentum. Porttitor senectus lorem rhoncus facilisi ac dictum varius egestas.',
-        1
+        2
     );
 
 select
