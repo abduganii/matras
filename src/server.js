@@ -6,7 +6,7 @@ const { PORT } = require("./config")
 const router = require('./modules')
 const path = require('path')
 
-// app.use(cors())
+app.use(cors())
 app.use(express.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use('/public', express.static(path.resolve(__dirname, './public')))

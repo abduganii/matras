@@ -4,7 +4,6 @@ module.exports = {
     Get: async (req, res) => {
         try {
             const {cotegoryid} = req.headers
-            console.log(cotegoryid)
             res.send(await model.product(cotegoryid))
         } catch (error) {
             res.status(400).send({
