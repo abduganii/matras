@@ -30,6 +30,39 @@ class products extends PG{
             , [productName, productImg, productPrice, productWight, productSize, productWarranty, productSuitable, productPriceAksiya, productText, cotegoryId]
         )
     }
+    updateProduct(productName,productPrice,productWight,productSize,productWarranty,productSuitable,productPriceAksiya,productText,cotegoryId,id) {
+        return this.fetch(
+        `
+            UPDATE 
+                products 
+            SET 
+                product_name = $1,
+                product_img= $2,
+                product_price= $3,
+                product_weight= $4,
+                product_sice= $5,
+                product_garian= $6,
+                product_suitable= $7,
+                product_price_aksiya= $8,
+                product_text= $9,
+                cotegory_id = $10
+            WHERE 
+                product_id = $11
+            returning *
+        `,[productName,imageproduct,productPrice,productWight,productSize,productWarranty,productSuitable,productPriceAksiya,productText,cotegoryId,id])
+    }
+    deleteProducts(id) {
+        return this.fetch(
+            `
+                UPDATE 
+                    products 
+                SET 
+                is_deleted = true 
+                WHERE 
+                product_id = $1
+                returning *
+            `,[id])
+    }
 }
 
 module.exports = new products()

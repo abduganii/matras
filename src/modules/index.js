@@ -35,10 +35,15 @@ router
     .delete('/deletecustomers',auth,Customer.Delete)
     //addres
     .get('/address', Address.Get)
-    .post('/newAddress', uploadImg.array("images"), Address.Post)
+    .post('/newAddress',auth, uploadImg.array("images"), Address.Post)
+    .put('/updateAddress', auth, )
+
     //product
     .get('/product', product.Get)
     .post('/newProduct', auth, uploadImg.array("images"), product.Post)
+    .put('/updateProduct', auth,uploadImg.array("images"),product.Put )
+    .delete('/deleteProduct', auth,uploadImg.array("images"),product.Delete )
+
     //order 
     .get('/order',order.Get)
     .post('/newOrder',order.Post)
