@@ -12,7 +12,7 @@ class address extends PG{
         return this.fetch(
              `
             insert into
-            addres(
+            address(
                  address_name,
                  address_text,
                  address_loc,

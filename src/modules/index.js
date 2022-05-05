@@ -35,7 +35,7 @@ router
     .delete('/deletecustomers',auth,Customer.Delete)
     //addres
     .get('/address', Address.Get)
-    .post('/newAddress', auth, uploadImg.array("images"), Address.Post)
+    .post('/newAddress', uploadImg.array("images"), Address.Post)
     //product
     .get('/product', product.Get)
     .post('/newProduct', auth, uploadImg.array("images"), product.Post)
