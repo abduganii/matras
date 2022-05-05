@@ -58,6 +58,18 @@ class products extends PG{
             returning *
         `,[productName,imageproduct,productPrice,productWight,productSize,productWarranty,productSuitable,productPriceAksiya,productText,cotegoryId,id])
     }
+    changeIscal(tryfalse,id) {
+        return this.fetch(
+            `
+            UPDATE 
+                products 
+            SET 
+                is_active = $1
+            WHERE 
+                product_id = $2
+            returning *
+        `,[tryfalse,id]) 
+    }
     deleteProducts(id) {
         return this.fetch(
             `

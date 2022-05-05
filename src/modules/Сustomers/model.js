@@ -24,7 +24,7 @@ class customers extends PG{
             UPDATE 
                 customer 
             SET 
-                is_call = $1 
+                customer_iscalled = $1 
             WHERE 
                 customer_id = $2
             returning *
@@ -38,7 +38,7 @@ class customers extends PG{
                 SET
                     is_deleted = true
                 WHERE 
-                    customer_id = $1
+                customer_id = $1
                 returning *
             `,[id])
     }

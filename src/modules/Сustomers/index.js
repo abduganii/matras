@@ -24,15 +24,11 @@ module.exports = {
     },
     Put: async (req, res) => {
         try {
-            let tryfalse2 
-            const { tryfalse, id } = req.body
-            if (tryfalse == false) {
-                tryfalse2 = true
-            }
-            if (tryfalse == true) {
-                tryfalse2 = false
-            }
-            res.send(await model.changeIscal(tryfalse2,id))
+            const { id } = req.body
+            const customerArr = await model.customer()
+            const Sortcustomer = customerArr.find(e => e.customer_id == id)
+            const tryFalse = !Sortcustomer.customer_iscalled
+            res.send(await model.changeIscal(tryFalse,id))
         } catch (error) {
             res.status(400).send({
                 status: 400,

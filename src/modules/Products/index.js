@@ -57,6 +57,20 @@ module.exports = {
             }) 
         }
     },
+    PutIscall: async (req, res) => {
+        try{
+            const { id } = req.body
+            const productArr = await model.product()
+            const Sortproduct = productArr.find(e => e.product_id == id)
+            const tryFalse = !Sortproduct.is_active
+            res.send(await model.changeIscal(tryFalse,id))
+        } catch (error) {
+        res.status(400).send({
+            status: 400,
+            error:"Bad request"
+        })
+    }
+    },
     Delete: async(req, res) =>{
         try {
             const {id} = req.body

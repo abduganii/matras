@@ -32,6 +32,7 @@ router
     // Customer
     .get('/customer', Customer.Get)
     .post('/newCustomer', auth, Customer.Post)
+    .put('/updateCustomer',auth,Customer.Put)
     .delete('/deletecustomers',auth,Customer.Delete)
     //addres
     .get('/address', Address.Get)
@@ -40,8 +41,10 @@ router
 
     //product
     .get('/product', product.Get)
+    .get('/GetByCotegory', product.GetByCotegory)
     .post('/newProduct', auth, uploadImg.array("images"), product.Post)
-    .put('/updateProduct', auth,uploadImg.array("images"),product.Put )
+    .put('/updateProduct', auth, uploadImg.array("images"), product.Put)
+    .put('/udateActiveProduct',auth, product.PutIscall)
     .delete('/deleteProduct', auth,uploadImg.array("images"),product.Delete )
 
     //order 
