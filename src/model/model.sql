@@ -68,3 +68,8 @@ CREATE TABLE orders(
     is_deleted boolean DEFAULT false,
     product_id int REFERENCES products(product_id) null null
 );
+
+CREATE TABLE carusels(
+    carusel_id serial Primary key not null,
+    carusel_name varchar(213) not null
+);

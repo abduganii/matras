@@ -28,5 +28,34 @@ module.exports = {
                 error: error.message
             })
         }
+    },
+    Put: async (req, res) => {
+        try {
+            const imageproduct = []
+            const fileImg = req.files
+			fileImg.map((e) => {
+                imageproduct.push(e.path)
+                console.log(e)
+            });
+            
+            const {addressName, addressText, addressLocation ,id} = req.body
+            res.send(await model.UPDATEAddres(imageproduct,addressName, addressText, addressLocation ,id))
+        } catch (error) {
+            res.status(400).send({
+                status: 400,
+                error: error.message
+            }) 
+        }
+    },
+    delete: async (req, res) => {
+        try {
+          const {id} = req.body
+          res.send(await model.deleteAddress(id))
+      } catch (error) {
+            res.status(400).send({
+                status: 400,
+                error: error.message
+            }) 
+      }  
     }
 }

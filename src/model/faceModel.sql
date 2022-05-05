@@ -89,3 +89,8 @@ insert into
     )
 Values
     ('Jenny Wilson', '+998 90 123 45 67', 4, 1);
+
+insert into
+    carusels(carusel_name)
+Values
+    ('Kechalari sokin dam oling');

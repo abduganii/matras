@@ -37,7 +37,8 @@ router
     //addres
     .get('/address', Address.Get)
     .post('/newAddress',auth, uploadImg.array("images"), Address.Post)
-    .put('/updateAddress', auth, )
+    .put('/updateAddress', auth,uploadImg.array("images"),Address.Put )
+    .put('/deleteAddress', auth,Address.delete )
 
     //product
     .get('/product', product.Get)
