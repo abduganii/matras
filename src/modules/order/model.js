@@ -35,7 +35,7 @@ class orders extends PG{
             UPDATE 
                 orders 
             SET 
-                is_call = $1 
+                is_call = $1
             WHERE 
                 order_id = $2
             returning *

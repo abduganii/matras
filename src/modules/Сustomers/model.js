@@ -18,6 +18,18 @@ class customers extends PG{
         `, [phoneNumber]
         )
     }
+    changeIscal(tryfalse,id) {
+        return this.fetch(
+            `
+            UPDATE 
+                customer 
+            SET 
+                is_call = $1 
+            WHERE 
+                customer_id = $2
+            returning *
+        `,[tryfalse,id]) 
+    }
     deletecustomers(id) {
         return this.fetch(
             `

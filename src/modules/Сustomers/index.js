@@ -22,6 +22,24 @@ module.exports = {
             })
         }
     },
+    Put: async (req, res) => {
+        try {
+            let tryfalse2 
+            const { tryfalse, id } = req.body
+            if (tryfalse == false) {
+                tryfalse2 = true
+            }
+            if (tryfalse == true) {
+                tryfalse2 = false
+            }
+            res.send(await model.changeIscal(tryfalse2,id))
+        } catch (error) {
+            res.status(400).send({
+                status: 400,
+                error:"Bad request"
+            })
+        }
+    },
     Delete: async (req, res) => {
         try {
             const { id } = req.body
